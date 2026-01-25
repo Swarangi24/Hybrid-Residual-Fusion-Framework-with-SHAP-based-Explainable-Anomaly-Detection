@@ -1,90 +1,43 @@
-Overview
+# Hybrid Residual Fusion Framework with SHAP-based Explainable Anomaly Detection
 
-This project implements a hybrid anomaly detection framework for time-series energy consumption data by combining machine learning, deep learning, residual analysis, anomaly fusion, and explainable AI (XAI).
+## Overview
+This project presents a **hybrid anomaly detection framework** for time-series energy consumption data that combines **machine learning, deep learning, residual analysis, multi-detector fusion, and explainable AI (XAI)**.  
+The system is designed to not only detect anomalies accurately but also explain **why** they occur, enabling transparency, trust, and production readiness.
 
-The system is designed to accurately detect anomalies while also providing clear, human-interpretable explanations for why each anomaly occurred, enabling trust, transparency, and real-world deployment readiness.
+---
 
-Key Objectives
+## Key Features
+- Hybrid modeling using **Random Forest** and **LSTM**
+- Residual-based anomaly detection for improved sensitivity
+- Multi-detector approach (Moving Average, Isolation Forest, One-Class SVM)
+- Weighted anomaly score fusion for robustness
+- **SHAP-based explainability** using TreeSHAP and surrogate modeling
+- Human-readable root-cause explanations for each anomaly
 
-Detect anomalous energy consumption patterns in smart meter data
+---
 
-Combine strengths of Random Forest and LSTM models using residual fusion
+## System Architecture
+1. Feature Engineering  
+2. Random Forest & LSTM Prediction  
+3. Residual Generation  
+4. Anomaly Detection  
+5. Hybrid Residual Fusion  
+6. SHAP-based Explainability  
+7. Root-Cause Reporting  
 
-Improve anomaly robustness using multiple detectors
+---
 
-Explain anomalies using SHAP for model interpretability
+## Technologies Used
+- **Language:** Python  
+- **Data Processing:** Pandas, NumPy  
+- **Machine Learning:** Scikit-learn  
+- **Deep Learning:** TensorFlow / Keras (LSTM)  
+- **Explainable AI:** SHAP (TreeSHAP)  
+- **Anomaly Detection:** Isolation Forest, One-Class SVM  
+- **Visualization:** Matplotlib  
 
-Generate user-friendly root-cause explanations for detected anomalies
+---
 
-System Architecture
-
-Feature Engineering
-
-Temporal features (hour, day, week, month)
-
-Rolling statistics and lag-based features
-
-Appliance-level and consumption-derived features
-
-Predictive Models
-
-Random Forest Regressor (captures non-linear feature interactions)
-
-LSTM Network (captures temporal dependencies)
-
-Residual Generation
-
-Compute residuals between actual and predicted energy consumption
-
-Residuals serve as the primary anomaly signal
-
-Anomaly Detection
-
-Moving Average (MAD-based thresholding)
-
-Isolation Forest
-
-One-Class SVM
-
-Hybrid Fusion
-
-Weighted fusion of anomaly scores from multiple detectors
-
-Optimized weights to improve detection reliability
-
-Explainable AI (XAI)
-
-TreeSHAP for Random Forest explanations
-
-Surrogate Random Forest trained on LSTM residuals
-
-Combined SHAP scoring to rank root causes
-
-Human-Readable Reporting
-
-Contextual explanations (time, baseline behavior, deviation)
-
-Feature-level contribution analysis
-
-Appliance and temporal impact summaries
-
-Technologies Used
-
-Programming Language: Python
-
-Data Processing: Pandas, NumPy
-
-Machine Learning: Scikit-learn
-
-Deep Learning: TensorFlow / Keras (LSTM)
-
-Explainability: SHAP (TreeSHAP)
-
-Anomaly Detection: Isolation Forest, One-Class SVM
-
-Visualization: Matplotlib, SHAP plots
-
-Project Structure
 .
 ├── data/
 │   └── processed_energy_data.csv
@@ -117,64 +70,58 @@ Project Structure
 ├── requirements.txt
 └── README.md
 
-How It Works
-Step 1: Feature Engineering
 
-Raw smart meter data is transformed into meaningful time-series features to capture usage patterns and trends.
 
-Step 2: Prediction & Residuals
+---
 
-Both Random Forest and LSTM models predict energy consumption.
+## Workflow
+
+### 1. Feature Engineering
+Transforms raw smart meter data into temporal, rolling, and lag-based features.
+
+### 2. Prediction & Residuals
+Random Forest and LSTM models predict energy consumption.  
 Residuals (actual − predicted) represent abnormal deviations.
 
-Step 3: Anomaly Detection
+### 3. Anomaly Detection
+Residuals are analyzed using:
+- Moving Average thresholding
+- Isolation Forest
+- One-Class SVM
 
-Multiple detectors independently analyze residuals to identify abnormal points.
+### 4. Hybrid Fusion
+Anomaly scores are fused using optimized weights to reduce false positives and improve reliability.
 
-Step 4: Hybrid Fusion
+### 5. Explainable AI (XAI)
+- TreeSHAP explains Random Forest predictions  
+- Surrogate Random Forest explains LSTM residual behavior  
+- Combined SHAP scores rank anomaly root causes
 
-Anomaly scores are combined using optimized weights to reduce false positives and increase detection confidence.
+### 6. Root-Cause Reporting
+Each anomaly includes:
+- Top contributing features
+- Temporal context
+- Appliance-level impact
+- Human-readable explanations
 
-Step 5: Explainability
+---
 
-SHAP explains Random Forest predictions directly
+## Results
+- High predictive performance (R² ≈ 0.95)
+- Detection of over **20,000 high-confidence anomalies**
+- Robust anomaly detection via score fusion
+- Clear, interpretable explanations for each anomaly
 
-A surrogate Random Forest explains LSTM residual behavior
+---
 
-SHAP values are combined with observed feature deviations
+## Use Cases
+- Smart home energy monitoring
+- Faulty appliance detection
+- Energy efficiency optimization
+- Explainable IoT anomaly detection
+- Academic and research applications
 
-Step 6: Root-Cause Reporting
+---
 
-Each anomaly is accompanied by:
 
-Top contributing features
-
-Temporal context
-
-Appliance-level impact
-
-Human-readable explanation text
-
-Results & Performance
-
-High predictive accuracy (R² ≈ 0.95)
-
-Over 20,000 high-confidence anomalies detected
-
-Robust detection through multi-detector fusion
-
-Clear root-cause explanations for each anomaly
-
-Research-grade explainability suitable for production use
-
-Use Cases
-
-Smart home energy monitoring
-
-Faulty appliance detection
-
-Energy efficiency optimization
-
-Explainable anomaly detection for IoT systems
-
-Research and academic applications in XAI
+## Project Structure
