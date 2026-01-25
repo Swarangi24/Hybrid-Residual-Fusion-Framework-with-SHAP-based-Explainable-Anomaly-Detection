@@ -37,7 +37,6 @@ The system is designed to not only detect anomalies accurately but also explain 
 - **Visualization:** Matplotlib  
 
 ---
-
 .
 ├── data/
 │   └── processed_energy_data.csv
@@ -55,11 +54,6 @@ The system is designed to not only detect anomalies accurately but also explain 
 │   ├── root_cause_reports.json
 │   └── plots/
 │
-├── notebooks/
-│   ├── feature_engineering.ipynb
-│   ├── model_training.ipynb
-│   └── explainability_analysis.ipynb
-│
 ├── src/
 │   ├── feature_engineering.py
 │   ├── train_models.py
@@ -67,9 +61,7 @@ The system is designed to not only detect anomalies accurately but also explain 
 │   ├── fusion_logic.py
 │   └── explainability.py
 │
-├── requirements.txt
-└── README.md
-
+└── Implementation.ipynb
 
 
 ---
@@ -122,6 +114,3 @@ Each anomaly includes:
 - Academic and research applications
 
 ---
-
-
-## Project Structure
