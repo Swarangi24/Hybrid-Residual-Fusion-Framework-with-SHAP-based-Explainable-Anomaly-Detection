@@ -1,0 +1,6 @@
+{
+    "Detected_Anomalies": 27496,
+    "Perfect_Anomalies": 172,
+    "Confidence_Threshold": 0.7,
+    "TemporalExplainability": true
+}

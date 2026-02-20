@@ -1,0 +1,9 @@
+{
+    "Weights": {
+        "MA": 0.4,
+        "IF": 0.3,
+        "OCSVM": 0.3
+    },
+    "Threshold": 0.08766935880650285,
+    "Detected_Anomalies": 27496
+}
