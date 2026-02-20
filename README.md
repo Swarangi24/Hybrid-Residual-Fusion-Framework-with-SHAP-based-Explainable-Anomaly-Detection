@@ -37,34 +37,6 @@ The system is designed to not only detect anomalies accurately but also explain 
 - **Visualization:** Matplotlib  
 
 ---
-.
-├── data/
-│   └── processed_energy_data.csv
-│
-├── models/
-│   ├── random_forest_model.joblib
-│   ├── lstm_model.h5
-│   └── surrogate_rf_lstm_resid.joblib
-│
-├── fusion/
-│   ├── fusion_final_results.csv
-│   └── fusion_final_meta.json
-│
-├── explainability_reports/
-│   ├── root_cause_reports.json
-│   └── plots/
-│
-├── src/
-│   ├── feature_engineering.py
-│   ├── train_models.py
-│   ├── anomaly_detection.py
-│   ├── fusion_logic.py
-│   └── explainability.py
-│
-└── Implementation.ipynb
-
-
----
 
 ## Workflow
 
